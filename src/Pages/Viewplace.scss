@@ -1,0 +1,39 @@
+.view-page {
+    .navbar {
+      position: fixed;
+      width: 100%;
+      top: 50px; /* Adjust this value to position the navbar below the top */
+      z-index: 1000;
+      background-color: #fff; /* Adjust the background color as needed */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+  
+    .content {
+      padding-top: 60px; /* Adjust this value to create space for the navbar */
+    }
+  
+    .place-details {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 50px;
+  
+      img {
+        width: 300px;
+        height: 300px;
+        border-radius: 10px;
+        margin-right: 20px;
+      }
+  
+      .details {
+        h2 {
+          font-size: 24px;
+          margin-bottom: 10px;
+        }
+        p {
+          font-size: 18px;
+          margin-bottom: 8px;
+        }
+      }
+    }
+  }
