@@ -5,20 +5,31 @@ import { MdOutlineAlternateEmail } from "react-icons/md";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { BiLogInCircle } from "react-icons/bi";
 import { MdOutlineTravelExplore } from "react-icons/md";
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Aos from 'aos'
 import 'aos/dist/aos.css'
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (!email.trim() || !password.trim()) {
+      console.log("error");
+      setError('Please provide both email and password.');
+      return;
+    }
     console.log('Email:', email);
     console.log('Password:', password);
     setEmail('');
     setPassword('');
+    setError('');
+    navigate('/home')
   };
+  const navigate= useNavigate()
 
  
 useEffect(()=>
@@ -59,12 +70,15 @@ Aos.init({duration:2000})
                <RiLockPasswordLine className='icon' />
                </div>
            </div>
-           
+           {error && <p className="error-message">{error}</p>}
            <div onClick={handleSubmit} className=" flex searchOptions">
           Login
            <BiLogInCircle className='icon' />
            </div>
        </div>
+       <p className="login-link">Forgot your password? <Link to="/forgot">Reset it here</Link></p>
+       <p className="login-link">Don't have an account? <Link to="/signup">Signup here</Link></p>
+
     </div>
     </section>
   );

@@ -58,7 +58,19 @@
         margin: auto;
         color: var(--whiteColor);
         z-index: 100;
-
+        .login-link {
+            margin-top: 0.2px; 
+            font-size: 14px;
+            
+            a {
+              color: #fff;
+              text-decoration: underline;
+              
+              &:hover {
+                color: #ccc; 
+              }
+            }
+          }
         .logoDiv{
             .logo{
                 color: var(--whiteColor);
@@ -176,6 +188,19 @@
                 height: 100vh;
 
          .loginContent{
+            .login-link {
+                margin-top: 10px; 
+                font-size: 14px;
+                
+                a {
+                  color: #fff;
+                  text-decoration: underline;
+                  
+                  &:hover {
+                    color: #ccc; 
+                  }
+                }
+              }
              .textDiv{
                  
                  .homeTitle{
@@ -196,7 +221,7 @@
                  }
              }
              .cardDiv{
-                grid-template-columns: repeat(3,1fr);
+                grid-template-columns: repeat(2,2fr);
                 .input{
                     margin-bottom: 2rem;
                 }
@@ -208,8 +233,21 @@
  @media screen and (min-width:660px)
 {
     .login{
-        height
+        height: 100vh;
         .loginContent{
+            .login-link {
+                margin-top: 10px; 
+                font-size: 14px;
+                
+                a {
+                  color: #fff;
+                  text-decoration: underline;
+                  
+                  &:hover {
+                    color: #ccc; 
+                  }
+                }
+              }
             .cardDiv{
                  padding: 2rem 1rem;
                  grid-template-columns: repeat(3,1fr);
@@ -233,6 +271,19 @@
     .login{
         height: 100vh;
         .loginContent{
+            .login-link {
+                margin-top: 5px; 
+                font-size: 14px;
+                
+                a {
+                  color: #fff;
+                  text-decoration: underline;
+                  
+                  &:hover {
+                    color: #ccc;
+                  }
+                }
+              }
             padding-left: 0;
             padding-right: 0;
 
@@ -247,6 +298,35 @@
                     padding: 8px 1rem;
 
                     
+                }
+             
+            }
+        }
+    }
+}
+@media screen and (max-width:499px)
+{
+    .login{
+        height: 100vh;
+        .loginContent{
+            .login-link {
+                margin-top: 10px;
+                font-size: 14px;
+                
+                a {
+                  color: #fff;
+                  text-decoration: underline;
+                  
+                  &:hover {
+                    color: #ccc; 
+                  }
+                }
+              }
+            .cardDiv{
+                 padding: 2rem 1rem;
+                 grid-template-columns: repeat(2,1fr);
+                 .input{
+                    margin-bottom: 2rem;
                 }
             }
         }

@@ -5,10 +5,14 @@ import { MdOutlineAlternateEmail } from 'react-icons/md';
 import { RiLockPasswordLine } from 'react-icons/ri';
 import { BiLogInCircle } from 'react-icons/bi';
 import { MdOutlineTravelExplore } from 'react-icons/md';
-import { MdDriveFileRenameOutline } from "react-icons/md";
 import { MdOutlineHomeWork } from "react-icons/md";
-import { MdOutlineWorkOutline } from "react-icons/md";
-import { BiDonateBlood } from "react-icons/bi";
+import { useNavigate } from 'react-router-dom';
+
+// import { MdOutlineWorkOutline } from "react-icons/md";
+// import { BiDonateBlood } from "react-icons/bi";
+import { Link } from 'react-router-dom';
+
+
 import 'aos/dist/aos.css';
 import Aos from 'aos';
 
@@ -44,11 +48,20 @@ const SignUp = () => {
     setEmail('');
     setPassword('');
     setConfirmPassword('');
+    navigate('/profile')
+
   };
+  const navigate= useNavigate()
 
   useEffect(() => {
     Aos.init({ duration: 2000 });
   }, []);
+
+ 
+
+
+
+
 
   return (
     <section className="login">
@@ -60,38 +73,35 @@ const SignUp = () => {
             <MdOutlineTravelExplore className="icon" />
             Travelon.
           </a>
+          <h1>Sign Up</h1>
         </div>
-        <div className="textDiv">
-          <h1 data-aos="fade-up" className="homeTitle">
-            Sign Up
-          </h1>
-        </div>
+       
         <div data-aos="fade-up" className="cardDiv grid">
           <div className="destinationInput">
             <label htmlFor="firstName">First Name</label>
             <div className="input flex">
               <input
                 type="text"
-                placeholder="Enter First Name"
+                placeholder="First Name"
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
                 required
               />
-               <MdDriveFileRenameOutline className='icon'/>
+               {/* <MdDriveFileRenameOutline className='icon'/> */}
 
             </div>
           </div>
           <div className="destinationInput">
-            <label htmlFor="lastname">Last Name</label>
+            <label htmlFor="lastname">LastName</label>
             <div className="input flex">
               <input
                 type="text"
-                placeholder="Enter Last Name"
+                placeholder="Last Name"
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
                 required
               />
-              <MdDriveFileRenameOutline className='icon'/>
+              {/* <MdDriveFileRenameOutline className='icon'/> */}
             </div>
           </div>
 
@@ -100,7 +110,7 @@ const SignUp = () => {
             <div className="input flex">
               <input
                 type="email"
-                placeholder="Enter Email"
+                placeholder="Mail id"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -114,7 +124,7 @@ const SignUp = () => {
             <div className="input flex">
               <input
                 type="password"
-                placeholder="Enter Password"
+                placeholder="*********"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required/>
@@ -126,7 +136,7 @@ const SignUp = () => {
             <div className="input flex">
               <input
                 type="password"
-                placeholder="Confirm Password"
+                placeholder="*********"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 required
@@ -134,7 +144,7 @@ const SignUp = () => {
               <RiLockPasswordLine className="icon" />
             </div>
           </div>
-          <div className="destinationInput">
+          {/* <div className="destinationInput">
                   <label htmlFor="dateOfBirth">Date of Birth</label>
                   <div className="input flex">
                <input
@@ -145,15 +155,15 @@ const SignUp = () => {
               required />
                   </div>
                   
-                </div>
+                </div> */}
 
                 <div className="destinationInput">
-                <label htmlFor="address">Address</label>
+                <label htmlFor="address">Enter Address</label>
                 <div className="input flex">
                   <input
                     type="text"
                     id="address"
-                    placeholder="Enter Address"
+                    placeholder=" Address"
                     value={address}
                     onChange={(e) => setAddress(e.target.value)}
                     required
@@ -161,7 +171,7 @@ const SignUp = () => {
                   <MdOutlineHomeWork className='icon'/>
                 </div>
               </div>
-              <div className="destinationInput">
+              {/* <div className="destinationInput">
                 <label htmlFor="job">Job</label>
                 <div className="input flex">
                   <input
@@ -174,9 +184,9 @@ const SignUp = () => {
                   />
                   <MdOutlineWorkOutline className='icon'/>
                 </div>
-              </div>
+              </div> */}
 
-              <div className="destinationInput">
+              {/* <div className="destinationInput">
                 <label htmlFor="bloodGroup">Blood Group</label>
                 <div className="input flex">
                   <select
@@ -195,14 +205,16 @@ const SignUp = () => {
                     <option value="O-">O-</option>
                   </select>
                   <BiDonateBlood className='icon' />
-
                 </div>
-              </div>
+              </div> */}
+
           <div onClick={handleSubmit} className=" flex searchOptions">
             Sign up
             <BiLogInCircle className="icon" />
           </div>
         </div>
+        <p className="login-link">Already have an account? <Link to="/login">Login here</Link></p>
+
       </div>
     </section>
   );
